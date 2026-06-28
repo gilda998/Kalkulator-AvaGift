@@ -17,27 +17,31 @@ body {
 h2 {
     font-family: 'Dancing Script', cursive;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 /* 2. Kartu Kontainer (Agar Rapi di Komputer & HP) */
-#items, #historyBox, .footer {
+#items, #historyBox, .footer, .input-group, #btnTambah, #hasil, .button-group {
     background: rgba(45, 45, 68, 0.8);
     border: 2px solid #6c5ce7;
     padding: 20px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     box-shadow: 0 0 15px rgba(108, 92, 231, 0.3);
-    max-width: 600px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 /* 3. Pengaturan Item di Dalamnya */
 .item-container {
+    background: rgba(60, 60, 90, 0.6);
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #444;
+    border: 1px solid #6c5ce7;
     border-radius: 12px;
+    text-align: left;
 }
 
 .controls-row {
@@ -48,16 +52,16 @@ h2 {
 }
 
 /* Input & Select Styling */
-.harga-input, .durasi-select, .jumlah-input {
+.harga-input, .durasi-select, .jumlah-input, input[type="number"] {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
-/* Biar tidak melar berlebihan di komputer */
-.harga-input { width: 100%; box-sizing: border-box; }
+.harga-input { width: 100%; margin-bottom: 10px; }
 .durasi-select { flex: 2; }
 .jumlah-input { flex: 1; min-width: 60px; }
 
@@ -65,12 +69,13 @@ h2 {
 button {
     background: linear-gradient(to right, #6c5ce7, #a29bfe);
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    width: 100%;
 }
 
 button:hover {
@@ -78,9 +83,15 @@ button:hover {
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
 }
 
+.button-group {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
 /* 5. Tabel & Link */
 .price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-.price-table td { border: 1px solid rgba(255, 255, 255, 0.2); padding: 12px 8px; color: #e0e0e0; }
+.price-table td { border: 1px solid rgba(255, 255, 255, 0.2); padding: 8px; color: #e0e0e0; }
 
 .pricelist-link {
     display: block;
@@ -88,7 +99,7 @@ button:hover {
     color: #ff99cc;
     text-decoration: none;
     font-size: 14px;
-    margin: 15px 0;
+    margin: 10px 0;
     font-weight: bold;
 }
 
@@ -97,4 +108,4 @@ button:hover {
     text-decoration: underline;
 }
 
-.warning-text { color: red; text-align: center; font-weight: bold; }
+.warning-text { color: red; text-align: center; font-weight: bold; margin-top: 10px; }
