@@ -1,9 +1,3 @@
-<!-- 
-  Dibuat oleh Gilda998.
-  Hak cipta dilindungi undang-undang.
-  Dilarang menyebarluaskan atau menjual kode ini tanpa izin.
--->
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,18 +6,17 @@
     <title>Ava Gift</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <h2>💸 Perhitungan Ava Gift</h2>
 
     <div class="input-group">
-    <label for="rate">Rate (%)</label>
-    <input type="number" id="rate" placeholder="Contoh: 65" min="1" step="any">
-</div>
+        <label for="rate">Rate (%)</label>
+        <input type="number" id="rate" placeholder="Contoh: 65" min="1" step="any" oninput="hitungTotal()">
+    </div>
 
     <br><br>
 
@@ -36,29 +29,29 @@
     <button id="simpanRiwayat">💾 Simpan Riwayat</button>
     <button id="btnHistory">📋 History</button>
 
-    <div id="historyBox" style="display:none;">
+    <div id="historyBox" style="display:none; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;">
         <h3>📋 Riwayat</h3>
         <div id="riwayat"></div>
     </div>
 
-    <div class="footer">
+    <div class="footer" style="margin-top: 30px;">
         <h3>📋 Pricelist Acc di Shopping Mall</h3>
         <table class="price-table">
             <tr><td>Pewarna Kulit Char</td><td>Rp 21.400</td><td>Tidak ada</td></tr>
-            </table>
+        </table>
         <p class="footer-text">by Gilda</p>
 
-<a href="https://bit.ly/PRICELIST-UPDATE" class="pricelist-link" target="_blank">
-    bit.ly/PRICELIST-UPDATE
-</a>
+        <a href="https://bit.ly/PRICELIST-UPDATE" class="pricelist-link" target="_blank">
+            bit.ly/PRICELIST-UPDATE
+        </a>
 
-<a href="https://bit.ly/Panduan-Penggunaan-Web" class="pricelist-link" target="_blank">
-    bit.ly/Panduan-Penggunaan-Web
-</a>
+        <br>
 
-<p class="warning-text">Dilarang Untuk Memperjualbelikan Link Web ‼️</p>
+        <a href="https://bit.ly/Panduan-Penggunaan-Web" class="pricelist-link" target="_blank">
+            bit.ly/Panduan-Penggunaan-Web
+        </a>
 
-
+        <p class="warning-text" style="color: red; font-weight: bold;">Dilarang Untuk Memperjualbelikan Link Web ‼️</p>
     </div>
 
     <script src="script.js"></script>
