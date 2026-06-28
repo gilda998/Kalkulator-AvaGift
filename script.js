@@ -46,63 +46,61 @@ document.getElementById("btnTambah").addEventListener("click", function() {
     container.appendChild(div);
 });
 
-// 3. Fungsi Simpan Riwayat (Detail per Item)
+// 3. Fungsi Simpan Riwayat
 document.getElementById("simpanRiwayat").addEventListener("click", function() {
     let items = document.querySelectorAll(".item-container");
-    
-    if (items.length === 0) {
-        alert("⚠️ Tidak ada item untuk disimpan!");
-        return;
-    }
+    if (items.length === 0) { alert("⚠️ Tidak ada item untuk disimpan!"); return; }
 
     let riwayatList = document.getElementById("riwayat");
     let wrapper = document.createElement("div");
-    wrapper.style.borderBottom = "1px solid #444";
-    wrapper.style.marginBottom = "15px";
-    wrapper.style.paddingBottom = "10px";
+    wrapper.style.cssText = "background: rgba(60, 60, 90, 0.4); padding: 15px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #6c5ce7; position: relative;";
     
-    // Tambahkan Tanggal
     let date = new Date();
     let dateStr = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-    wrapper.innerHTML = `<p style="margin: 0; font-size: 12px; color: #aaa;">📅 ${dateStr}</p>`;
+    wrapper.innerHTML = `<div style="font-size: 12px; color: #ff99cc; margin-bottom: 10px;">📅 ${dateStr}</div>`;
 
-    // Ambil detail per item
     let rate = parseFloat(document.getElementById("rate").value) / 100;
-    
+    let totalKeseluruhan = 0;
+
     items.forEach(div => {
         let h = div.querySelector(".harga-input").value;
         let dSelect = div.querySelector(".durasi-select");
         let dText = dSelect.options[dSelect.selectedIndex].text;
         let dVal = parseFloat(dSelect.value);
         let jml = div.querySelector(".jumlah-input").value;
-        
         let subtotal = Math.round((h * dVal * jml) * rate);
+        totalKeseluruhan += subtotal;
 
         let p = document.createElement("p");
         p.style.margin = "5px 0";
-        p.innerText = `${h} (${dText}) x ${jml} -> Rp ${subtotal.toLocaleString('id-ID')}`;
+        p.innerText = `${h} (${dText}) -> ${subtotal.toLocaleString('id-ID')}`;
         wrapper.appendChild(p);
     });
 
-    // Tambahkan Total Keseluruhan
-    let totalText = document.getElementById("hasil").innerText;
     let totalP = document.createElement("p");
     totalP.style.fontWeight = "bold";
-    totalP.style.color = "#ff99cc";
     totalP.style.marginTop = "10px";
-    totalP.innerText = `💸 ${totalText}`;
+    totalP.innerText = `💸 Total: Rp ${totalKeseluruhan.toLocaleString('id-ID')}`;
     wrapper.appendChild(totalP);
 
-    riwayatList.appendChild(wrapper);
-    alert("✅ Riwayat berhasil disimpan!");
+    let btnGroup = document.createElement("div");
+    btnGroup.innerHTML = `
+        <button class="btn-sm" onclick="this.parentElement.parentElement.remove()">Hapus</button>
+        <button class="btn-sm" onclick="salinRiwayat(this.parentElement.parentElement)">Salin</button>
+    `;
+    wrapper.appendChild(btnGroup);
+
+    riwayatList.prepend(wrapper);
 });
+
+// Fungsi Salin
+window.salinRiwayat = function(el) {
+    let text = el.innerText.replace("HapusSalin", "");
+    navigator.clipboard.writeText(text).then(() => alert("✅ Disalin!"));
+};
 
 // 4. Fungsi Toggle History
 document.getElementById("btnHistory").addEventListener("click", function() {
     let box = document.getElementById("historyBox");
-    if (box.style.display === "none" || box.style.display === "") {
-        box.style.display = "block";
-    } else {
-        box.style.display = "none";
-    }
+    box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
 });
