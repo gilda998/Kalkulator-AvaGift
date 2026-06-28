@@ -11,47 +11,42 @@
 </head>
 <body>
 
-    <h2>💸 Perhitungan Ava Gift</h2>
+    <div class="main-container">
+        <h2>💸 Perhitungan Ava Gift</h2>
 
-    <div class="input-group">
-        <label for="rate">Rate (%)</label>
-        <input type="number" id="rate" placeholder="Contoh: 65" min="1" step="any" oninput="hitungTotal()">
-    </div>
+        <div class="input-group">
+            <label for="rate">Rate (%)</label>
+            <input type="number" id="rate" placeholder="Contoh: 65" min="1" step="any" oninput="hitungTotal()">
+        </div>
 
-    <br><br>
+        <div id="items"></div>
 
-    <div id="items"></div>
+        <button id="btnTambah">+ Tambah Item</button>
 
-    <button id="btnTambah">+ Tambah Item</button>
+        <h3 id="hasil">Total Setelah di rate: Rp 0</h3>
 
-    <h3 id="hasil">Total Setelah di rate: Rp 0</h3>
+        <div class="button-group">
+            <button id="simpanRiwayat">💾 Simpan Riwayat</button>
+            <button id="btnHistory">📋 History</button>
+        </div>
 
-    <button id="simpanRiwayat">💾 Simpan Riwayat</button>
-    <button id="btnHistory">📋 History</button>
+        <div id="historyBox" style="display:none;">
+            <h3>📋 Riwayat</h3>
+            <div id="riwayat"></div>
+        </div>
 
-    <div id="historyBox" style="display:none; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;">
-        <h3>📋 Riwayat</h3>
-        <div id="riwayat"></div>
-    </div>
+        <div class="footer">
+            <h3>📋 Pricelist Acc di Shopping Mall</h3>
+            <table class="price-table">
+                <tr><td>Pewarna Kulit Char</td><td>Rp 21.400</td><td>Tidak ada</td></tr>
+            </table>
+            <p class="footer-text">by Gilda</p>
 
-    <div class="footer" style="margin-top: 30px;">
-        <h3>📋 Pricelist Acc di Shopping Mall</h3>
-        <table class="price-table">
-            <tr><td>Pewarna Kulit Char</td><td>Rp 21.400</td><td>Tidak ada</td></tr>
-        </table>
-        <p class="footer-text">by Gilda</p>
+            <a href="https://bit.ly/PRICELIST-UPDATE" class="pricelist-link" target="_blank">bit.ly/PRICELIST-UPDATE</a>
+            <a href="https://bit.ly/Panduan-Penggunaan-Web" class="pricelist-link" target="_blank">bit.ly/Panduan-Penggunaan-Web</a>
 
-        <a href="https://bit.ly/PRICELIST-UPDATE" class="pricelist-link" target="_blank">
-            bit.ly/PRICELIST-UPDATE
-        </a>
-
-        <br>
-
-        <a href="https://bit.ly/Panduan-Penggunaan-Web" class="pricelist-link" target="_blank">
-            bit.ly/Panduan-Penggunaan-Web
-        </a>
-
-        <p class="warning-text" style="color: red; font-weight: bold;">Dilarang Untuk Memperjualbelikan Link Web ‼️</p>
+            <p class="warning-text" style="color: red; font-weight: bold;">Dilarang Untuk Memperjualbelikan Link Web ‼️</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
