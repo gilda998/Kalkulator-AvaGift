@@ -1,0 +1,128 @@
+/* 1. Background Lebih "Hidup" dengan Gradasi Ungu-Pink */
+body {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1b1b2f 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+}
+
+/* 2. Kartu dengan Border Warna (Agar lebih kontras) */
+#items, .footer, #historyBox {
+    background: rgba(45, 45, 68, 0.8); /* Lebih terang sedikit */
+    border: 2px solid #6c5ce7; /* Border ungu terang */
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(108, 92, 231, 0.3); /* Efek glow tipis */
+}
+
+/* 3. Input agar tidak gelap mati */
+.item-input {
+    background-color: rgba(255, 255, 255, 0.1); /* Warna putih transparan */
+    color: #ffffff;                             /* Teks jadi putih */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis */
+    border-radius: 8px;                         /* Sudut melengkung */
+    padding: 10px;
+    outline: none;                              /* Menghilangkan garis biru saat diklik */
+}
+
+/* Opsional: Ubah warna placeholder agar terlihat */
+.item-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* 4. Tombol yang lebih "POP" */
+button {
+    background: linear-gradient(to right, #6c5ce7, #a29bfe); /* Ungu terang */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #fd79a8; /* Jadi Pink saat di-klik/hover */
+}
+
+/* 5. Warna Teks di Tabel agar terbaca jelas */
+/* Mengatur garis tabel agar terlihat jelas */
+.price-table td {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Memberikan garis putih transparan */
+    padding: 12px 8px;
+    color: #e0e0e0; /* Pastikan teks tabel juga terang agar kontras */
+}
+
+/* Jika ingin garisnya hanya di bawah setiap baris saja agar lebih rapi */
+.price-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.item-row {
+    display: flex; /* Membuat isi berjejer horizontal */
+    align-items: center; /* Menjaga agar sejajar di tengah */
+    gap: 8px; /* Memberi jarak antar elemen */
+    margin-bottom: 10px;
+}
+
+.item-input {
+    flex: 2; /* Input harga mengambil ruang lebih lebar */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.durasi-select {
+    flex: 1.5; /* Dropdown lebih kecil dari input */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.btn-hapus {
+    background: #ff4d4d; /* Merah terang */
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+/* Tambahkan ke style.css */
+body {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.card { /* Sesuaikan dengan class kotak kamu */
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4); /* Menggunakan nuansa pink sesuai selera kamu */
+}
+h2 {
+    font-family: 'Dancing Script', cursive;
+}
+.pricelist-link {
+    display: block;             /* Agar link ada di baris baru */
+    text-align: center;
+    color: #ff99cc;             /* Warna pink yang senada dengan tema */
+    text-decoration: none;      /* Menghilangkan garis bawah link */
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.pricelist-link:hover {
+    color: #ff66b2;             /* Warna sedikit lebih terang saat disentuh */
+    text-decoration: underline; /* Muncul garis bawah saat disentuh */
+}

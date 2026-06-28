@@ -1,0 +1,67 @@
+<!-- 
+  Dibuat oleh Gilda998.
+  Hak cipta dilindungi undang-undang.
+  Dilarang menyebarluaskan atau menjual kode ini tanpa izin.
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava Gift</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <h2>💸 Perhitungan Ava Gift</h2>
+
+    <label>Rate (%)</label>
+    <input type="number" id="rate" value="65" oninput="hitungTotal()">
+
+    <br><br>
+
+    <div id="items"></div>
+
+    <button id="btnTambah">+ Tambah Item</button>
+
+    <h3 id="hasil">Total Setelah di rate: Rp 0</h3>
+
+    <button id="simpanRiwayat">💾 Simpan Riwayat</button>
+    <button id="btnHistory">📋 History</button>
+
+    <div id="historyBox" style="display:none;">
+        <h3>📋 Riwayat</h3>
+        <div id="riwayat"></div>
+    </div>
+
+    <div class="footer">
+        <h3>📋 Pricelist Acc di Shopping Mall</h3>
+        <table class="price-table">
+            <tr><td>VIP Room</td><td>Rp 8.600</td><td>12 Jam</td></tr>
+            <tr><td>Event Room</td><td>Rp 8.600</td><td>7 Hari</td></tr>
+            <tr><td>Ganti Nick Club</td><td>Rp 21.000</td><td> Tidak ada</td></tr>
+            <tr><td>Pewarna Kulit Char</td><td>Rp 21.400</td><td>Tidak ada</td></tr>
+            </table>
+        <p class="footer-text">by Gilda</p>
+
+<a href="https://bit.ly/PRICELIST-UPDATE" class="pricelist-link" target="_blank">
+    bit.ly/PRICELIST-UPDATE
+</a>
+
+<a href="https://bit.ly/Panduan-Penggunaan-Web" class="pricelist-link" target="_blank">
+    bit.ly/Panduan-Penggunaan-Web
+</a>
+
+<p class="warning-text">Dilarang Untuk Memperjualbelikan Link Web ‼️</p>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
