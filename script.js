@@ -46,21 +46,20 @@ document.getElementById("btnTambah").addEventListener("click", function() {
     container.appendChild(div);
 });
 
-// 3. Fungsi Simpan Riwayat
+// // 3. Fungsi Simpan Riwayat
 document.getElementById("simpanRiwayat").addEventListener("click", function() {
     let items = document.querySelectorAll(".item-container");
-    if (items.length === 0) { alert("⚠️ Tidak ada item untuk disimpan!"); return; }
+    if (items.length === 0) { alert("⚠️ Tidak ada item!"); return; }
 
     let riwayatList = document.getElementById("riwayat");
     let wrapper = document.createElement("div");
-    wrapper.style.cssText = "background: rgba(60, 60, 90, 0.4); padding: 15px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #6c5ce7; position: relative;";
+    wrapper.className = "riwayat-wrapper"; // class untuk identifikasi
+    wrapper.style.cssText = "background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #4a6fa5;";
     
-    let date = new Date();
-    let dateStr = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-    wrapper.innerHTML = `<div style="font-size: 12px; color: #ff99cc; margin-bottom: 10px;">📅 ${dateStr}</div>`;
-
-    let rate = parseFloat(document.getElementById("rate").value) / 100;
+    let dateStr = new Date().toLocaleDateString('id-ID');
+    
     let totalKeseluruhan = 0;
+    let listDetail = "";
 
     items.forEach(div => {
         let h = div.querySelector(".harga-input").value;
@@ -68,35 +67,37 @@ document.getElementById("simpanRiwayat").addEventListener("click", function() {
         let dText = dSelect.options[dSelect.selectedIndex].text;
         let dVal = parseFloat(dSelect.value);
         let jml = div.querySelector(".jumlah-input").value;
-        let subtotal = Math.round((h * dVal * jml) * rate);
+        let subtotal = Math.round((h * dVal * jml) * (parseFloat(document.getElementById("rate").value)/100));
         totalKeseluruhan += subtotal;
 
-        let p = document.createElement("p");
-        p.style.margin = "5px 0";
-        p.innerText = `${h} (${dText}) -> ${subtotal.toLocaleString('id-ID')}`;
-        wrapper.appendChild(p);
+        listDetail += `${h} (${dText}) x ${jml} -> ${subtotal.toLocaleString('id-ID')}\n`;
     });
 
-    let totalP = document.createElement("p");
-    totalP.style.fontWeight = "bold";
-    totalP.style.marginTop = "10px";
-    totalP.innerText = `💸 Total: Rp ${totalKeseluruhan.toLocaleString('id-ID')}`;
-    wrapper.appendChild(totalP);
-
-    let btnGroup = document.createElement("div");
-    btnGroup.innerHTML = `
-        <button class="btn-sm" onclick="this.parentElement.parentElement.remove()">Hapus</button>
-        <button class="btn-sm" onclick="salinRiwayat(this.parentElement.parentElement)">Salin</button>
+    // Struktur HTML dengan class yang jelas
+    wrapper.innerHTML = `
+        <div class="riwayat-date" style="font-size: 11px; color: #89c2d9; margin-bottom: 5px;">📅 ${dateStr}</div>
+        <pre class="riwayat-text" style="font-family: sans-serif; font-size: 13px; margin: 5px 0; color: #e0e6ed;">${listDetail}</pre>
+        <div class="riwayat-total" style="font-weight: bold; border-top: 1px solid #4a6fa5; padding-top: 5px; color: #fff;">💸 Total: Rp ${totalKeseluruhan.toLocaleString('id-ID')}</div>
+        <div style="margin-top: 10px; display: flex; gap: 5px;">
+            <button onclick="this.closest('.riwayat-wrapper').remove()" style="background:#555; color:white; border:none; padding:5px 10px; border-radius:5px;">Hapus</button>
+            <button onclick="salinRiwayat(this.closest('.riwayat-wrapper'))" style="background:#4a6fa5; color:white; border:none; padding:5px 10px; border-radius:5px;">Salin</button>
+        </div>
     `;
-    wrapper.appendChild(btnGroup);
 
     riwayatList.prepend(wrapper);
+    document.getElementById("historyBox").style.display = "block";
 });
 
-// Fungsi Salin
+// Fungsi Salin yang sangat akurat
 window.salinRiwayat = function(el) {
-    let text = el.innerText.replace("HapusSalin", "");
-    navigator.clipboard.writeText(text).then(() => alert("✅ Disalin!"));
+    let date = el.querySelector(".riwayat-date").innerText;
+    let text = el.querySelector(".riwayat-text").innerText;
+    let total = el.querySelector(".riwayat-total").innerText;
+    
+    // Menggabungkan hanya bagian yang diinginkan
+    let hasilSalin = `${date}\n\n${text}${total}`;
+    
+    navigator.clipboard.writeText(hasilSalin).then(() => alert("✅ Disalin!"));
 };
 
 // 4. Fungsi Toggle History
