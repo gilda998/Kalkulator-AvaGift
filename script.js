@@ -46,19 +46,55 @@ document.getElementById("btnTambah").addEventListener("click", function() {
     container.appendChild(div);
 });
 
-// 3. Fungsi Simpan Riwayat
+// 3. Fungsi Simpan Riwayat (Detail per Item)
 document.getElementById("simpanRiwayat").addEventListener("click", function() {
-    let total = document.getElementById("hasil").innerText;
-    if (total === "Total Setelah di rate: Rp 0") {
-        alert("⚠️ Tidak ada data untuk disimpan!");
+    let items = document.querySelectorAll(".item-container");
+    
+    if (items.length === 0) {
+        alert("⚠️ Tidak ada item untuk disimpan!");
         return;
     }
-    
+
     let riwayatList = document.getElementById("riwayat");
-    let entry = document.createElement("p");
-    entry.innerText = new Date().toLocaleTimeString() + " - " + total;
-    riwayatList.appendChild(entry);
-    alert("✅ Berhasil disimpan!");
+    let wrapper = document.createElement("div");
+    wrapper.style.borderBottom = "1px solid #444";
+    wrapper.style.marginBottom = "15px";
+    wrapper.style.paddingBottom = "10px";
+    
+    // Tambahkan Tanggal
+    let date = new Date();
+    let dateStr = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    wrapper.innerHTML = `<p style="margin: 0; font-size: 12px; color: #aaa;">📅 ${dateStr}</p>`;
+
+    // Ambil detail per item
+    let rate = parseFloat(document.getElementById("rate").value) / 100;
+    
+    items.forEach(div => {
+        let h = div.querySelector(".harga-input").value;
+        let dSelect = div.querySelector(".durasi-select");
+        let dText = dSelect.options[dSelect.selectedIndex].text;
+        let dVal = parseFloat(dSelect.value);
+        let jml = div.querySelector(".jumlah-input").value;
+        
+        let subtotal = Math.round((h * dVal * jml) * rate);
+
+        let p = document.createElement("p");
+        p.style.margin = "5px 0";
+        p.innerText = `${h} (${dText}) x ${jml} -> Rp ${subtotal.toLocaleString('id-ID')}`;
+        wrapper.appendChild(p);
+    });
+
+    // Tambahkan Total Keseluruhan
+    let totalText = document.getElementById("hasil").innerText;
+    let totalP = document.createElement("p");
+    totalP.style.fontWeight = "bold";
+    totalP.style.color = "#ff99cc";
+    totalP.style.marginTop = "10px";
+    totalP.innerText = `💸 ${totalText}`;
+    wrapper.appendChild(totalP);
+
+    riwayatList.appendChild(wrapper);
+    alert("✅ Riwayat berhasil disimpan!");
 });
 
 // 4. Fungsi Toggle History
