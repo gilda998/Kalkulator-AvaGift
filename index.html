@@ -20,11 +20,13 @@
 
     <h2>💸 Perhitungan Ava Gift</h2>
 
-    <label>Rate (%)</label>
-    <input type="number" id="rate" value="65" oninput="hitungTotal()">
+    <div class="input-group">
+    <label for="rate">Rate (%)</label>
+    <input type="number" id="rate" placeholder="Contoh: 65" min="1" step="any">
+</div>
 
-    <br><br>
-
+<br><br>
+  
     <div id="items"></div>
 
     <button id="btnTambah">+ Tambah Item</button>
