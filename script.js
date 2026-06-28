@@ -38,7 +38,7 @@ document.getElementById("btnTambah").addEventListener("click", function() {
                 <option value="2">30 Hari</option>
                 <option value="6">Permanen</option>
             </select>
-            <input type="number" class="jumlah-input" placeholder="Jml" min="1" value="1" oninput="hitungTotal()">
+            <input type="number" class="jumlah-input" placeholder="Jumlah" min="1" value="1" oninput="hitungTotal()">
             <button class="btn-hapus" onclick="this.parentElement.parentElement.remove(); hitungTotal();">❌</button>
         </div>
     `;
