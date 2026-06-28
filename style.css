@@ -20,7 +20,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* 2. Kartu Kontainer (Agar Rapi di Komputer & HP) */
+/* 2. Semua Kartu dibuat seragam di tengah */
 #items, #historyBox, .footer, .input-group, #btnTambah, #hasil, .button-group {
     background: rgba(45, 45, 68, 0.8);
     border: 2px solid #6c5ce7;
@@ -32,6 +32,7 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    box-sizing: border-box;
 }
 
 /* 3. Pengaturan Item di Dalamnya */
@@ -56,7 +57,7 @@ h2 {
     margin-top: 10px;
 }
 
-/* Input & Select Styling */
+/* Input & Select */
 .harga-input, .durasi-select, .jumlah-input, input[type="number"] {
     background: rgba(255, 255, 255, 0.1);
     color: white;
@@ -64,23 +65,24 @@ h2 {
     border-radius: 8px;
     padding: 10px;
     box-sizing: border-box;
+    width: 100%;
 }
 
-.harga-input { width: 100%; margin-bottom: 10px; }
-.durasi-select { flex: 2; }
-.jumlah-input { flex: 1; min-width: 60px; }
+.durasi-select { flex: 2; width: auto; }
+.jumlah-input { flex: 1; min-width: 60px; width: auto; }
 
-/* 4. Tombol-tombol */
+/* 4. Tombol Utama */
 button {
     background: linear-gradient(to right, #6c5ce7, #a29bfe);
     color: white;
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
     width: 100%;
+    margin-bottom: 5px;
 }
 
 button:hover {
@@ -88,16 +90,18 @@ button:hover {
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
 }
 
+/* Tombol Hapus */
 .btn-hapus {
     background: #ff4757 !important;
-    color: white !important;
     width: auto !important;
-    padding: 10px 15px !important;
+    padding: 8px 12px !important;
 }
 
+/* Grup Tombol Simpan & History */
 .button-group {
     display: flex;
     gap: 10px;
+    padding: 10px;
 }
 
 /* 5. Tabel & Link */
@@ -106,17 +110,11 @@ button:hover {
 
 .pricelist-link {
     display: block;
-    text-align: center;
     color: #ff99cc;
     text-decoration: none;
     font-size: 14px;
-    margin: 10px 0;
+    margin-top: 10px;
     font-weight: bold;
 }
 
-.pricelist-link:hover {
-    color: #ff66b2;
-    text-decoration: underline;
-}
-
-.warning-text { color: red; text-align: center; font-weight: bold; margin-top: 10px; }
+.warning-text { color: red; font-weight: bold; margin-top: 10px; }
