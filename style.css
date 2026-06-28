@@ -1,129 +1,68 @@
-/* 1. Pengaturan Dasar */
+/* Tema Ice Blue & Soft Dark - Elegan & Tenang */
 body {
-    background: linear-gradient(135deg, #2d1b4e 0%, #1b1b2f 100%);
+    background: linear-gradient(135deg, #0a0e14 0%, #161e2a 100%) !important;
     min-height: 100vh;
     margin: 0;
     padding: 20px;
     font-family: 'Segoe UI', sans-serif;
-    color: #ffffff;
-    animation: fadeIn 1s ease-in;
+    color: #d1d9e6;
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-h2 {
-    font-family: 'Dancing Script', cursive;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* 2. Semua Kartu dibuat seragam di tengah */
-#items, #historyBox, .footer, .input-group, #btnTambah, #hasil, .button-group {
-    background: rgba(45, 45, 68, 0.8);
-    border: 2px solid #6c5ce7;
-    padding: 20px;
+.main-container {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(22, 30, 42, 0.9);
+    padding: 25px;
     border-radius: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 15px rgba(108, 92, 231, 0.3);
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    box-sizing: border-box;
+    border: 1px solid #4a6fa5;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* 3. Pengaturan Item di Dalamnya */
-.item-container {
-    background: rgba(60, 60, 90, 0.6);
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #6c5ce7;
-    border-radius: 12px;
-    text-align: left;
-    width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
+h2 { 
+    color: #89c2d9; 
+    text-align: center; 
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(137, 194, 217, 0.5); 
 }
 
-.controls-row {
-    display: flex; 
-    gap: 10px; 
-    align-items: center; 
-    margin-top: 10px;
-}
+label { color: #a3b6cc; font-weight: 500; margin-bottom: 5px; display: block; }
 
-/* Input & Select */
-.harga-input, .durasi-select, .jumlah-input, input[type="number"] {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.durasi-select { flex: 2; width: auto; }
-.jumlah-input { flex: 1; min-width: 60px; width: auto; }
-
-/* 4. Tombol Utama */
-button {
-    background: linear-gradient(to right, #6c5ce7, #a29bfe);
-    color: white;
+input {
+    background: #0d131c !important;
+    border: 1px solid #4a6fa5 !important;
+    color: #ffffff !important;
     padding: 12px;
-    border: none;
-    border-radius: 10px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #2c3e50 !important;
+    color: #89c2d9 !important;
+    border: 1px solid #4a6fa5 !important;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    width: 100%;
-    margin-bottom: 5px;
 }
 
-button:hover {
-    background: #fd79a8;
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+button:hover { background: #34495e !important; }
+
+a { 
+    color: #61a0af !important; 
+    text-decoration: underline;
+    font-weight: 500;
 }
 
-/* Tombol Hapus: Mengikuti tema background */
-.btn-hapus {
-    background: rgba(255, 255, 255, 0.1) !important; /* Transparan senada dengan input */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Garis tipis */
-    color: #ff7675 !important; /* Warna merah lembut/soft agar tidak mati tapi tidak agresif */
-    width: auto !important;
-    padding: 8px 12px !important;
-    transition: 0.3s;
-}
-
-.btn-hapus:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    color: #ff4d4d !important;
-}
-
-
-/* Grup Tombol Simpan & History */
-.button-group {
-    display: flex;
-    gap: 10px;
+#hasil {
+    text-align: center;
+    color: #e0e6ed;
+    background: rgba(137, 194, 217, 0.1);
     padding: 10px;
+    border-radius: 8px;
 }
-
-/* 5. Tabel & Link */
-.price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-.price-table td { border: 1px solid rgba(255, 255, 255, 0.2); padding: 8px; color: #e0e0e0; }
-
-.pricelist-link {
-    display: block;
-    color: #ff99cc;
-    text-decoration: none;
-    font-size: 14px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.warning-text { color: red; font-weight: bold; margin-top: 10px; }
