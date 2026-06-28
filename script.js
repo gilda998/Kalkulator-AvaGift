@@ -45,3 +45,28 @@ document.getElementById("btnTambah").addEventListener("click", function() {
     
     container.appendChild(div);
 });
+
+// 3. Fungsi Simpan Riwayat
+document.getElementById("simpanRiwayat").addEventListener("click", function() {
+    let total = document.getElementById("hasil").innerText;
+    if (total === "Total Setelah di rate: Rp 0") {
+        alert("⚠️ Tidak ada data untuk disimpan!");
+        return;
+    }
+    
+    let riwayatList = document.getElementById("riwayat");
+    let entry = document.createElement("p");
+    entry.innerText = new Date().toLocaleTimeString() + " - " + total;
+    riwayatList.appendChild(entry);
+    alert("✅ Berhasil disimpan!");
+});
+
+// 4. Fungsi Toggle History
+document.getElementById("btnHistory").addEventListener("click", function() {
+    let box = document.getElementById("historyBox");
+    if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+});
