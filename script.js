@@ -1,4 +1,4 @@
-const hargaTetap = [8600, 21000, 21400]; 
+const hargaTetap = [8600, 21400]; 
 
 // 1. Fungsi Hitung Total
 window.hitungTotal = function() {
