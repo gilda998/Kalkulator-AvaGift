@@ -1,14 +1,14 @@
 // 1. Fungsi Hitung Total
 window.hitungTotal = function() {
     let totalKeseluruhan = 0;
-    let rate = parseFloat(document.getElementById("rate").value) / 100 || 0;
+    let rateInput = document.getElementById("rate").value;
+    let rate = parseFloat(rateInput) / 100 || 0;
 
     document.querySelectorAll(".item-container").forEach(div => {
         let h = parseFloat(div.querySelector(".harga-input").value) || 0;
         let dVal = parseFloat(div.querySelector(".durasi-select").value); 
         let jml = parseInt(div.querySelector(".jumlah-input").value) || 1;
 
-        // RUMUS: (Harga * Pengali Durasi) * Jumlah * Rate
         let subtotal = (h * dVal) * jml;
         totalKeseluruhan += (subtotal * rate);
     });
@@ -16,8 +16,15 @@ window.hitungTotal = function() {
     document.getElementById("hasil").innerText = "Total Setelah di rate: Rp " + Math.round(totalKeseluruhan).toLocaleString('id-ID');
 };
 
-// 2. Tambah Item (Layout Baru: Harga di atas, kontrol di bawah)
+// 2. Tambah Item (dengan validasi Rate)
 document.getElementById("btnTambah").addEventListener("click", function() {
+    let rateInput = document.getElementById("rate").value;
+    if (!rateInput || parseFloat(rateInput) <= 0) {
+        alert("⚠️ Mohon isi Rate (%) terlebih dahulu!");
+        document.getElementById("rate").focus();
+        return;
+    }
+
     let container = document.getElementById("items");
     let div = document.createElement("div");
     div.className = "item-container";
@@ -55,7 +62,7 @@ document.getElementById("simpanRiwayat").addEventListener("click", function() {
         
         let subtotal = (h * dVal) * jml;
         let hasil = subtotal * rate;
-        detailItems.push(`${h} (${namaDurasi}) x ${jml} item -> ${Math.round(hasil)}`);
+        detailItems.push(`${h} (${namaDurasi}) x ${jml} -> ${Math.round(hasil)}`);
     });
 
     let totalTeks = document.getElementById("hasil").innerText;
@@ -76,7 +83,7 @@ window.tampilkanRiwayat = function() {
     list.innerHTML = "";
     JSON.parse(localStorage.getItem("riwayat") || "[]").forEach((item, i) => {
         let div = document.createElement("div");
-        div.innerHTML = `<pre style="white-space: pre-line;">${item}</pre><button onclick="salinRiwayat(${i})">Salin</button> <button onclick="hapusRiwayat(${i})">Hapus</button><hr>`;
+        div.innerHTML = `<pre style="white-space: pre-line; border-bottom: 1px solid #444; padding-bottom: 5px;">${item}</pre><button onclick="salinRiwayat(${i})">Salin</button> <button onclick="hapusRiwayat(${i})">Hapus</button>`;
         list.appendChild(div);
     });
 };
