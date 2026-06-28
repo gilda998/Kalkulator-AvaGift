@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava Gift</title>
+    <title>Perhitungan Ava Gift</title>
+    <!-- BARIS INI WAJIB ADA AGAR BACKGROUND BERUBAH -->
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="main-container">
         <h2>💸 Perhitungan Ava Gift</h2>
 
@@ -21,7 +18,7 @@
 
         <div id="items"></div>
 
-        <button id="btnTambah">+ Tambah Item</button>
+        <button id="btnTambah" class="btn-main">+ Tambah Item</button>
 
         <h3 id="hasil">Total Setelah di rate: Rp 0</h3>
 
@@ -30,22 +27,22 @@
             <button id="btnHistory">📋 History</button>
         </div>
 
+        <div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+            <a href="https://bit.ly/Panduan-Penggunaan-Web" target="_blank" style="color: #6c5ce7; text-decoration: underline; font-size: 14px; display: block; margin-bottom: 8px;">
+                📖 Klik di sini untuk Panduan Penggunaan
+            </a>
+            <a href="https://bit.ly/PRICELIST-UPDATE" target="_blank" style="color: #ff99cc; text-decoration: underline; font-size: 14px;">
+                💰 Klik di sini untuk Pricelist Update
+            </a>
+        </div>
+
         <div id="historyBox" style="display:none;">
             <h3>📋 Riwayat</h3>
             <div id="riwayat"></div>
-        </div>
-
-        <div class="footer">
-            <h3>📋 Pricelist Acc di Shopping Mall</h3>
-            <table class="price-table">
-                <tr><td>Pewarna Kulit Char</td><td>Rp 21.400</td><td>Tidak ada</td></tr>
-            </table>
-            <p class="footer-text">by Gilda</p>
-
-            <a href="https://bit.ly/PRICELIST-UPDATE" class="pricelist-link" target="_blank">bit.ly/PRICELIST-UPDATE</a>
-            <a href="https://bit.ly/Panduan-Penggunaan-Web" class="pricelist-link" target="_blank">bit.ly/Panduan-Penggunaan-Web</a>
-
-            <p class="warning-text" style="color: red; font-weight: bold;">Dilarang Untuk Memperjualbelikan Link Web ‼️</p>
+            
+            <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 15px;">
+                by Gilda
+            </p>
         </div>
     </div>
 
