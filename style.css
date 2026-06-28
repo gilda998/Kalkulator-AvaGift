@@ -90,12 +90,21 @@ button:hover {
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
 }
 
-/* Tombol Hapus */
+/* Tombol Hapus: Mengikuti tema background */
 .btn-hapus {
-    background: #ff4757 !important;
+    background: rgba(255, 255, 255, 0.1) !important; /* Transparan senada dengan input */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Garis tipis */
+    color: #ff7675 !important; /* Warna merah lembut/soft agar tidak mati tapi tidak agresif */
     width: auto !important;
     padding: 8px 12px !important;
+    transition: 0.3s;
 }
+
+.btn-hapus:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ff4d4d !important;
+}
+
 
 /* Grup Tombol Simpan & History */
 .button-group {
