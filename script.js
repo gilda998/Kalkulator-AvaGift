@@ -31,7 +31,7 @@ document.getElementById("btnTambah").addEventListener("click", function() {
     div.style.cssText = "display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; padding: 15px; border: 1px solid #333; border-radius: 8px;";
     
     div.innerHTML = `
-        <input type="number" class="harga-input" placeholder="Harga Awal di Mall sebelum klik keranjang)" style="padding: 8px;" oninput="hitungTotal()">
+        <input type="number" class="harga-input" placeholder="Harga awal di Mall sebelum klik keranjang" style="padding: 8px;" oninput="hitungTotal()">
         <div class="controls-row" style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
             <select class="durasi-select" style="flex: 2; padding: 8px;" onchange="hitungTotal()">
                 <option value="1">7 Hari</option>
