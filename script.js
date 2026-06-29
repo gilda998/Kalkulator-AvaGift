@@ -36,7 +36,7 @@ document.getElementById("btnTambah").addEventListener("click", function() {
             <select class="durasi-select" onchange="hitungTotal()">
                 <option value="1">7 Hari</option>
                 <option value="1b">12 Jam–VIP room/SVIP</option>
-                <option value="1c">30 Hari–Platform/Unicorn/PMP</option>
+                <option value="1c">30 Hari–Platform/Mascot/PMP</option>
                 <option value="2a">30 Hari–Ava/Extra Item/Gitar/Move</option>
                 <option value="2b">90 Hari</option>
                 <option value="6a">365 Hari–Mascot/DJ/PMP</option>
