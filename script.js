@@ -35,8 +35,12 @@ document.getElementById("btnTambah").addEventListener("click", function() {
         <div class="controls-row">
             <select class="durasi-select" onchange="hitungTotal()">
                 <option value="1">7 Hari</option>
-                <option value="2">30 Hari</option>
-                <option value="6">Permanen</option>
+                <option value="1b">12 Jam–VIP room/SVIP</option>
+                <option value="1c">30 Hari–Platform/Unicorn/PMP</option>
+                <option value="2a">30 Hari–Ava/Extra Item/Gitar</option>
+                <option value="2b">90 Hari</option>
+                <option value="6a">365 Hari–Mascot/DJ/PMP</option>
+                <option value="6b">Permanen</option>
             </select>
             <input type="number" class="jumlah-input" placeholder="Jumlah" min="1" value="1" oninput="hitungTotal()">
             <button class="btn-hapus" onclick="this.parentElement.parentElement.remove(); hitungTotal();">❌</button>
