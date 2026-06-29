@@ -1,4 +1,4 @@
-/* Tema Ice Blue & Soft Dark - Final Compact Version */
+/* Tema Ice Blue & Soft Dark - Premium Compact Version */
 body {
     background: linear-gradient(135deg, #0a0e14 0%, #161e2a 100%) !important;
     min-height: 100vh;
@@ -13,57 +13,78 @@ body {
 .main-container {
     width: 100%;
     max-width: 450px;
-    background: rgba(22, 30, 42, 0.9);
-    padding: 15px;
-    border-radius: 15px;
-    border: 1px solid #4a6fa5;
+    background: rgba(22, 30, 42, 0.85);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(137, 194, 217, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(137, 194, 217, 0.1);
 }
 
-h2 { color: #89c2d9; text-align: center; margin: 0 0 10px 0; font-size: 1.3rem; }
+h2 { 
+    color: #89c2d9; 
+    text-align: center; 
+    margin: 0 0 15px 0; 
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px rgba(137, 194, 217, 0.3);
+}
 
-/* Wadah baris item agar hemat ruang */
 .item-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px; /* Jarak antar elemen */
     margin-bottom: 8px;
 }
 
+/* FIX: Semua input dan select mendapatkan flex: 1 agar lebarnya sama */
 input, select {
     background: #0d131c !important;
     border: 1px solid #4a6fa5 !important;
     color: #ffffff !important;
-    padding: 8px;
-    border-radius: 6px;
+    padding: 10px;
+    border-radius: 8px;
     width: 100%;
+    flex: 1; /* Ini kuncinya agar lebar seragam */
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
 }
 
-/* Memperbesar area klik durasi */
-select { flex: 2; cursor: pointer; }
-
-/* Tombol hapus (X) */
+/* Tombol Hapus dibuat lebih kecil agar proporsional */
 .btn-hapus {
-    background: #4a2c2c !important;
+    background: rgba(74, 44, 44, 0.6) !important;
     color: #ff8989 !important;
     border: 1px solid #7d4a4a !important;
-    padding: 8px 12px;
-    border-radius: 6px;
+    padding: 10px 12px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    flex: 0; /* Tidak ikut melebar */
+    transition: 0.3s;
 }
 
-.button-group { display: flex; gap: 10px; margin: 10px 0; }
+.btn-hapus:hover { background: #4a2c2c !important; }
+
+.button-group { display: flex; gap: 10px; margin: 15px 0; }
 
 button {
-    background: #2c3e50 !important;
+    background: rgba(44, 62, 80, 0.6) !important;
     color: #89c2d9 !important;
     border: 1px solid #4a6fa5 !important;
-    padding: 8px;
-    border-radius: 6px;
+    padding: 10px;
+    border-radius: 8px;
     width: 100%;
     cursor: pointer;
+    font-weight: 600;
 }
 
-#hasil { text-align: center; font-weight: bold; padding: 10px; background: rgba(137, 194, 217, 0.1); border-radius: 8px; }
+#hasil { 
+    text-align: center; 
+    font-weight: bold; 
+    padding: 12px; 
+    background: rgba(137, 194, 217, 0.1); 
+    border-radius: 10px;
+    border: 1px solid rgba(137, 194, 217, 0.2);
+    margin-bottom: 15px;
+}
 
-.footer-links { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 10px; }
+.footer-links { display: flex; justify-content: space-between; font-size: 0.85rem; }
